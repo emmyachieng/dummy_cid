@@ -15,4 +15,8 @@ defmodule DummyCid do
   def hello do
     :world
   end
+
+  def dummy do
+    :hello
+  end
 end
