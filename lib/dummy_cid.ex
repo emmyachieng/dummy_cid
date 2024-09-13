@@ -19,4 +19,8 @@ defmodule DummyCid do
   def dummy do
     :hello
   end
+
+  def sum(a, b) do
+    a + b
+  end
 end
