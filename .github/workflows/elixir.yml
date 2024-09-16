@@ -16,15 +16,15 @@ jobs:
 
     strategy:
       matrix:
-        elixir-version: [1.15.4]  # Change this according to your Elixir version
-        otp-version: [26]     # Specify OTP (Erlang) version
+        elixir-version: [1.15.4]
+        otp-version: [26]
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Set up Elixir
-      uses: actions/setup-elixir@v1
+      uses: erlef/setup-elixir@v2
       with:
         elixir-version: ${{ matrix.elixir-version }}
         otp-version: ${{ matrix.otp-version }}
@@ -34,13 +34,14 @@ jobs:
 
     - name: Run tests
       run: mix test
+
   deploy:
     needs: test
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Install Heroku CLI
       run: curl https://cli-assets.heroku.com/install.sh | sh
