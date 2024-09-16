@@ -16,8 +16,8 @@ jobs:
 
     strategy:
       matrix:
-        elixir-version: [1.12]  # Change this according to your Elixir version
-        otp-version: [24.0]     # Specify OTP (Erlang) version
+        elixir-version: [1.15.4]  # Change this according to your Elixir version
+        otp-version: [26]     # Specify OTP (Erlang) version
 
     steps:
     - name: Checkout code
